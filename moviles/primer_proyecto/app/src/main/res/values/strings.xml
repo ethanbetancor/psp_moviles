@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">primer proyecto</string>
+    <string name="valoraci_n_de_ciudades">Valoración de Ciudades</string>
+    <string name="nombre_de_la_ciudad">Nombre de la ciudad</string>
+    <string name="pa_s">País</string>
+    <string name="fecha_de_visita">Fecha de visita</string>
+    <string name="motivo_del_viaje">Motivo del viaje</string>
+    <string name="valoraci_n">Valoración:</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="guardar">Guardar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="anterior">Anterior</string>
+    <string name="_0_0">0/0</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="actualizar">actualizar</string>
+    <string name="borrar">borrar</string>
+
+</resources>

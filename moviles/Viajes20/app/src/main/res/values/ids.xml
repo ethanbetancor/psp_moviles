@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="guidelineDer" type="id" />
+    <item name="guidelineButtons" type="id" />
+    <item name="btnSiguiente" type="id" />
+    <item name="btnAnterior" type="id" />
+    <item name="Contador" type="id" />
+    <item name="guidelineIzq" type="id" />
+    <item name="btnBorrar" type="id" />
+    <item name="guidelineComments" type="id" />
+    <item name="btnGuardar" type="id" />
+    <item name="btnActualizar" type="id" />
+    <item name="btnLimpiar" type="id" />
+    <item name="guidelineValoracion" type="id" />
+    <item name="comentText" type="id" />
+    <item name="radio5" type="id" />
+    <item name="radio4" type="id" />
+    <item name="radio3" type="id" />
+    <item name="radio2" type="id" />
+    <item name="radio1" type="id" />
+    <item name="guidelineFecha" type="id" />
+    <item name="ratingGroup" type="id" />
+    <item name="guidelineciudadPais" type="id" />
+    <item name="MotivoText" type="id" />
+    <item name="guidelineNombre" type="id" />
+    <item name="PaisText" type="id" />
+    <item name="FechaVisitaText" type="id" />
+    <item name="guidelineTitle" type="id" />
+    <item name="CiudadText" type="id" />
+    <item name="guidelineTop" type="id" />
+    <item name="headerText" type="id" />
+</resources>
