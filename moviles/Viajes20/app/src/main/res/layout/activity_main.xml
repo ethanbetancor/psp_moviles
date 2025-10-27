@@ -4,295 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Ui.MainActivity">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/headerList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#6F1AFF"
+        android:gravity="center"
+        android:text="@string/listado_de_ciudades"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
+        android:id="@+id/guideIzq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.0" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineDer"
+        android:id="@+id/guideDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineIzq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTitle"
+        android:id="@+id/guideTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.125" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineciudadPais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineValoracion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineComments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtons"
+        android:id="@+id/guideButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.875" />
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/headerText"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaVisitas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintWidth_percent="1"
-        app:layout_constraintHeight_percent="0.14286"
-        android:gravity="center"
-        android:text="@string/valoraci_n_de_ciudades"
-        android:background="#6F1AFF"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop"
-        app:layout_constraintBottom_toTopOf="@id/guidelineTitle" />
+        app:layout_constraintBottom_toTopOf="@+id/guideButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideDer"
+        app:layout_constraintStart_toStartOf="@+id/guideIzq"
+        app:layout_constraintTop_toBottomOf="@+id/headerList" />
 
-    <!-- Campo Ciudad -->
-    <EditText
-        android:id="@+id/CiudadText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintHeight_percent="0.08"
-        android:inputType="text"
-        android:hint="@string/nombre_de_la_ciudad"
-        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
-        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
-        app:layout_constraintTop_toTopOf="@id/guidelineTitle"
-        app:layout_constraintBottom_toTopOf="@id/guidelineNombre" />
-
-    <!-- País -->
-    <EditText
-        android:id="@+id/PaisText"
-        android:layout_width="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/pa_s"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineciudadPais"
-        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
-        app:layout_constraintTop_toTopOf="@+id/guidelineNombre"
-        app:layout_constraintWidth_percent="0.45" />
-
-    <!-- Fecha visita -->
-    <EditText
-        android:id="@+id/FechaVisitaText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:hint="@string/fecha_de_visita"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineciudadPais"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
-        app:layout_constraintStart_toEndOf="@+id/PaisText"
-        app:layout_constraintTop_toTopOf="@+id/guidelineNombre"
-        app:layout_constraintWidth_percent="0.45" />
-
-
-    <EditText
-        android:id="@+id/MotivoText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/motivo_del_viaje"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineFecha"
-        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
-        app:layout_constraintTop_toTopOf="@+id/guidelineciudadPais"
-        app:layout_constraintWidth_percent="0.9" />
-
-
-    <RadioGroup
-        android:id="@+id/ratingGroup"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineValoracion"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
-        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
-        app:layout_constraintTop_toTopOf="@+id/guidelineFecha">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="@string/valoraci_n"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1" />
-
-        <RadioButton
-            android:id="@+id/radio2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2" />
-
-        <RadioButton
-            android:id="@+id/radio3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3" />
-
-        <RadioButton
-            android:id="@+id/radio4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4" />
-
-        <RadioButton
-            android:id="@+id/radio5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5" />
-    </RadioGroup>
-
-    <!-- Comentarios -->
-    <EditText
-        android:id="@+id/comentText"
-        android:layout_width="0dp"
-        android:lines="2"
-        android:layout_height="wrap_content"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:hint="@string/comentarios"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineComments"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
-        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
-        app:layout_constraintTop_toTopOf="@+id/guidelineValoracion" />
-
-
-    <Button
-        android:id="@+id/btnLimpiar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/limpiar"
-        android:textSize="10sp"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintTop_toTopOf="@id/guidelineComments"
-        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
-        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
-        app:layout_constraintEnd_toStartOf="@id/btnActualizar"
-        app:layout_constraintHorizontal_chainStyle="spread" />
-
-    <Button
-        android:id="@+id/btnActualizar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/actualizar"
-        android:textSize="10sp"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintTop_toTopOf="@id/guidelineComments"
-        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
-        app:layout_constraintStart_toEndOf="@id/btnLimpiar"
-        app:layout_constraintEnd_toStartOf="@id/btnBorrar" />
-
-    <Button
-        android:id="@+id/btnBorrar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/borrar"
-        android:textSize="10sp"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintTop_toTopOf="@id/guidelineComments"
-        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
-        app:layout_constraintStart_toEndOf="@id/btnActualizar"
-        app:layout_constraintEnd_toStartOf="@id/btnGuardar" />
-
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/guardar"
-        android:textSize="10sp"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintTop_toTopOf="@id/guidelineComments"
-        app:layout_constraintBottom_toTopOf="@id/guidelineButtons"
-        app:layout_constraintStart_toEndOf="@id/btnBorrar"
-        app:layout_constraintEnd_toStartOf="@id/guidelineDer" />
-
-    <Button
-        android:id="@+id/btnAnterior"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Anterior"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintWidth_percent="0.3"
-        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineButtons" />
+        app:layout_constraintEnd_toStartOf="@+id/guideDer"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideButton"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <TextView
-        android:id="@+id/Contador"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/_0_0"
-        android:textSize="18sp"
-        app:layout_constraintWidth_percent="0.3"
-        app:layout_constraintStart_toEndOf="@id/btnAnterior"
-        app:layout_constraintEnd_toStartOf="@id/btnSiguiente"
-        app:layout_constraintTop_toTopOf="@id/guidelineButtons"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <Button
-        android:id="@+id/btnSiguiente"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/siguiente"
-        android:backgroundTint="#6F1AFF"
-        app:layout_constraintWidth_percent="0.3"
-        app:layout_constraintEnd_toEndOf="@id/guidelineDer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineButtons" />
-
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.81995136" />
 </androidx.constraintlayout.widget.ConstraintLayout>

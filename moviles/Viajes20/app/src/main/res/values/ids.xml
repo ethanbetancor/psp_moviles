@@ -29,4 +29,7 @@
     <item name="CiudadText" type="id" />
     <item name="guidelineTop" type="id" />
     <item name="headerText" type="id" />
+    <item name="headerList" type="id" />
+    <item name="ciudad" type="id" />
+    <item name="fecha" type="id" />
 </resources>
