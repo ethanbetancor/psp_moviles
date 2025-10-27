@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class TransaccionesLock implements IBanco {
-    private static final Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
     private double saldo=1000;
     private List<String> historial = new java.util.ArrayList<>();
 
