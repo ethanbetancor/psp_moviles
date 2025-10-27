@@ -8,7 +8,7 @@ object RepositorioVisitas {
     private val visitas = mutableListOf<Visita>()
 
     init {
-        visitas.add(Visita("Juan Perez", "Argentina", "2023-01-15", "Turismo", "Hermoso lugar", Rating.CINCO))
+        visitas.add(Visita("Buenos Aires", "Argentina", "2023-01-15", "Turismo", "Hermoso lugar", Rating.CINCO))
     }
 
     fun getVisitas(id:Int)= visitas[id];
