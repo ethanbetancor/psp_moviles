@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Juego - Adivina el número</title>
+    <style>
+        /* ========== ESTILOS GENERALES ========== */
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: #f3f7fa;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ========== TARJETA PRINCIPAL ========== */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(20,40,60,0.08);
+            padding: 36px 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ========== TÍTULO Y TEXTOS ========== */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+            color: #111827;
+        }
+        .nombre {
+            font-size: 1.2rem;
+            color: #0a86ff;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        .instrucciones {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+        .intentos {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* ========== MENSAJES (ÉXITO/ERROR/INFO) ========== */
+        .mensaje {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .mensaje.exito {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .mensaje.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .mensaje.info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* ========== FORMULARIOS Y CAMPOS ========== */
+        form {
+            margin-top: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1.5px solid #e6eef5;
+            font-size: 1.1rem;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+        }
+        input[type="number"]:disabled {
+            background: #f3f4f6;
+            cursor: not-allowed;
+        }
+
+        /* ========== BOTONES ========== */
+        button {
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 8px;
+            border: none;
+            background: #23a03b;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #1e8b33;
+        }
+        button:active {
+            transform: translateY(1px);
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        button.reiniciar {
+            background: #0a86ff;
+        }
+        button.reiniciar:hover {
+            background: #0869d9;
+        }
+        button.estadisticas {
+            background: #8b5cf6;
+        }
+        button.estadisticas:hover {
+            background: #7c3aed;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- ========== CABECERA ========== -->
+        <h1>🎮 Adivina el número</h1>
+        <div class="nombre" th:text="'¡Bienvenido, ' + ${nombre} + '!'">¡Bienvenido!</div>
+
+        <!-- ========== INSTRUCCIONES ========== -->
+        <p class="instrucciones" th:text="'Adivina el número entre ' + ${minNumero} + ' y ' + ${maxNumero}">
+            Adivina el número entre 1 y 10
+        </p>
+
+        <!-- ========== CONTADOR DE INTENTOS ========== -->
+        <div class="intentos" th:if="${intentos != null}" th:text="'Intentos restantes: ' + ${intentos}">
+            Intentos restantes: 10
+        </div>
+
+        <!-- ========== MENSAJES (Victoria/Derrota/Pistas) ========== -->
+        <div th:if="${mensaje != null and mensaje != ''}"
+             th:class="${ganaste ? 'mensaje exito' : (gameOver ? 'mensaje error' : 'mensaje info')}"
+             th:text="${mensaje}">
+        </div>
+
+        <!-- ========== FORMULARIO DE JUEGO (Solo si el juego NO terminó) ========== -->
+        <form method="post" action="juego" th:if="${!gameOver}">
+            <input type="number"
+                   id="numero"
+                   name="numero"
+                   th:attr="min=${minNumero}, max=${maxNumero}"
+                   required
+                   autofocus />
+            <button type="submit">Adivinar</button>
+        </form>
+
+        <!-- ========== BOTÓN REINICIAR (Solo si el juego terminó) ========== -->
+        <form method="post" action="juego" th:if="${gameOver or ganaste}">
+            <input type="hidden" name="reiniciar" value="true" />
+            <button type="submit" class="reiniciar">🔄 Jugar de nuevo</button>
+        </form>
+
+        <!-- ========== BOTÓN ESTADÍSTICAS (Siempre visible) ========== -->
+        <a href="estadisticas">
+            <button type="button" class="estadisticas">📊 Ver Estadísticas</button>
+        </a>
+    </div>
+</body>
+</html>
