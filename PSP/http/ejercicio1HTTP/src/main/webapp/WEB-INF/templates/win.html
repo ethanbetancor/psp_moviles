@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Victoria!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .trophy {
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .mensaje {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="trophy">🏆</div>
+    <h1>¡Victoria!</h1>
+    <p class="mensaje" th:text="'¡Felicidades ' + ${nombre} + '! Has adivinado el número'">¡Felicidades! Has adivinado el número</p>
+
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-label">Número secreto:</span>
+            <span class="stat-value" th:text="${numeroSecreto}">7</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Intentos usados:</span>
+            <span class="stat-value" th:text="${intentosUsados}">3</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Intentos restantes:</span>
+            <span class="stat-value" th:text="${intentos}">2</span>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <form action="juego" method="post" style="margin: 0;">
+            <input type="hidden" name="reiniciar" value="true">
+            <button type="submit" class="btn btn-primary">🎮 Volver a Jugar</button>
+        </form>
+
+        <a href="estadisticas" class="btn btn-secondary">📊 Ver Estadísticas</a>
+
+        <a href="login" class="btn btn-danger">🚪 Salir</a>
+    </div>
+</div>
+</body>
+</html>
