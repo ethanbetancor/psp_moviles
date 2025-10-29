@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bienvenido</title>
+    <style>
+        :root{
+            --bg:#f3f7fa;
+            --card:#ffffff;
+            --muted:#c8d4df;
+            --green:#23a03b;
+            --blue:#0b7aff;
+            --shadow: 0 12px 30px rgba(20,40,60,0.08);
+            --soft-shadow: 0 6px 18px rgba(20,40,60,0.06);
+            --radius:12px;
+            --btn-radius:8px;
+            --max-w:520px;
+            font-size:16px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:var(--bg);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .card-wrap{
+            width:100%;
+            max-width:var(--max-w);
+            margin:48px;
+        }
+
+        .card{
+            background:var(--card);
+            border-radius:var(--radius);
+            padding:34px 36px;
+            box-shadow:var(--shadow);
+            position:relative;
+        }
+
+        h1{
+            margin:0 0 18px 0;
+            text-align:center;
+            font-size:28px;
+            font-weight:700;
+            color:#111827;
+            letter-spacing:0.2px;
+        }
+
+        .field{
+            display:block;
+            width:100%;
+            margin-bottom:18px;
+        }
+
+        input[type="text"]{
+            width:100%;
+            padding:14px 16px;
+            border-radius:10px;
+            border:1.5px solid #e6eef5;
+            background:#fbfeff;
+            font-size:15px;
+            color:#0f1724;
+            outline:none;
+            box-shadow:var(--soft-shadow);
+            box-sizing:border-box;
+        }
+
+        input[type="text"]::placeholder{
+            color:var(--muted);
+        }
+
+        .btn, .btn:link, .btn:visited {
+            display:block;
+            width:100%;
+            padding:14px 18px;
+            margin:12px 0;
+            border-radius:var(--btn-radius);
+            border:0;
+            color:#fff;
+            font-weight:700;
+            font-size:20px;
+            cursor:pointer;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+            transition: transform .12s ease, box-shadow .12s ease;
+            text-align:center;
+            text-decoration:none;
+            box-sizing:border-box;
+        }
+        .btn:active{ transform:translateY(1px) }
+        .btn.green{ background:var(--green) }
+        .btn.blue{ background:var(--blue) }
+
+        /* responsive smaller screens */
+        @media (max-width:420px){
+            .card{ padding:22px }
+            h1{ font-size:22px }
+            .btn{ font-size:18px; padding:12px }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrap" role="main">
+    <div class="card" aria-labelledby="titledesc">
+        <h1 id="titledesc">Bienvenido</h1>
+        <form method="post" action="juego">
+            <label class="field" for="nombre" aria-hidden="true">
+                <input id="nombre" name="nombre" type="text" placeholder="Introduce tu nombre" />
+            </label>
+            <button class="btn green" type="submit" name="accion" value="jugar">Jugar</button>
+            <a class="btn blue" href="/PantallaEstadisticas" style="text-align:center; text-decoration:none;">Estadísticas</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
