@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <!-- ====================== GUIDELINES ====================== -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gTitle"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gCiudad"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gPaisFecha"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gMotivo"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gValoracion"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gComments"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gIzq"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gDer"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gRadio1"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gRadio2"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gRadio3"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gRadio4"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- ====================== TÍTULO CON MATERIAL TOOLBAR ====================== -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/headerText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        app:title="@string/a_adir_viaje"
+        app:titleTextColor="?attr/colorOnPrimary"
+        app:titleCentered="true"
+        style="@style/Widget.Material3.Toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gTop"
+        app:layout_constraintBottom_toTopOf="@id/gTitle" />
+
+    <!-- ====================== CIUDAD CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCiudad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gTitle"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CiudadText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/ciudad" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== PAÍS CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPais"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.43"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toTopOf="@id/gCiudad"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PaisText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pa_s"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== FECHA CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.43"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gCiudad"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/FechaVisitaText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="@string/fecha_de_visita" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== MOTIVO CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMotivo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gPaisFecha"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/MotivoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/motivo_del_viaje" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== VALORACIÓN CON MATERIAL ====================== -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvValoracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valoraci_n"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toTopOf="@id/gMotivo" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio1"
+        style="@style/Widget.Material3.CompoundButton.RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1"
+        app:layout_constraintEnd_toStartOf="@+id/gRadio1"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toBottomOf="@id/tvValoracion" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_2"
+        style="@style/Widget.Material3.CompoundButton.RadioButton"
+        app:layout_constraintStart_toStartOf="@id/gRadio1"
+        app:layout_constraintTop_toBottomOf="@id/tvValoracion" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_3"
+        style="@style/Widget.Material3.CompoundButton.RadioButton"
+        app:layout_constraintStart_toStartOf="@id/gRadio2"
+        app:layout_constraintTop_toBottomOf="@id/tvValoracion" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4"
+        style="@style/Widget.Material3.CompoundButton.RadioButton"
+        app:layout_constraintStart_toStartOf="@id/gRadio3"
+        app:layout_constraintTop_toBottomOf="@id/tvValoracion" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_5"
+        style="@style/Widget.Material3.CompoundButton.RadioButton"
+        app:layout_constraintStart_toStartOf="@id/gRadio4"
+        app:layout_constraintTop_toBottomOf="@id/tvValoracion" />
+
+    <!-- ====================== PARTICIPANTES CON MATERIAL BUTTON ====================== -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnParticipantes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/seleccionar_participantes"
+        style="@style/Widget.Material3.Button.TonalButton"
+        app:icon="@android:drawable/ic_menu_add"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gValoracion" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textSelectedParticipants"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/participantes_ninguno"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        app:layout_constraintBottom_toTopOf="@+id/gComments"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toBottomOf="@id/btnParticipantes" />
+
+    <!-- ====================== COMENTARIOS CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComentarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gComments"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/comentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:hint="@string/comentarios" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== BOTÓN GUARDAR CON MATERIAL ====================== -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGuardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        style="@style/Widget.Material3.Button"
+        app:icon="@android:drawable/ic_menu_save"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintTop_toTopOf="@id/gButtons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

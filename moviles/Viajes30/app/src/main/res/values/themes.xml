@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme con Material 3 Dynamic Color (Expressive) -->
+    <style name="Base.Theme.Viajes30" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Habilitar colores dinámicos de Material You -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>
+
+        <!-- Colores primarios personalizados -->
+        <item name="colorPrimary">#6F1AFF</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">#EADDFF</item>
+        <item name="colorOnPrimaryContainer">#21005E</item>
+
+        <!-- Colores secundarios -->
+        <item name="colorSecondary">#625B71</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorSecondaryContainer">#E8DEF8</item>
+        <item name="colorOnSecondaryContainer">#1E192B</item>
+
+        <!-- Colores terciarios -->
+        <item name="colorTertiary">#7E5260</item>
+        <item name="colorOnTertiary">@android:color/white</item>
+        <item name="colorTertiaryContainer">#FFD9E3</item>
+        <item name="colorOnTertiaryContainer">#31101D</item>
+
+        <!-- Colores de fondo y superficie -->
+        <item name="colorSurface">#FFFBFF</item>
+        <item name="colorOnSurface">#1C1B1F</item>
+        <item name="colorSurfaceVariant">#E7E0EB</item>
+        <item name="colorOnSurfaceVariant">#49454E</item>
+
+        <!-- Material 3 Shapes - Expressive (más redondeados) -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.Corner.Large</item>
+
+        <!-- Tipografía Material 3 -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Material3.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Material3.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Material3.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Material3.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Material3.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Material3.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Material3.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Material3.LabelSmall</item>
+    </style>
+
+    <style name="Theme.Viajes30" parent="Base.Theme.Viajes30" />
+</resources>

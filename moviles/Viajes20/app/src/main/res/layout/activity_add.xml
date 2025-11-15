@@ -193,7 +193,6 @@
             android:text="5" />
     </RadioGroup>
 
-    <!-- Comentarios -->
     <EditText
         android:id="@+id/comentText"
         android:layout_width="0dp"
@@ -206,6 +205,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
         app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
         app:layout_constraintTop_toTopOf="@+id/guidelineValoracion" />
+
+
 
 
     <Button

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/listaVisita"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/lista_visitas" />
+    <item
+        android:id="@+id/listaPersona"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/lista_personas"
+        />
+</menu>

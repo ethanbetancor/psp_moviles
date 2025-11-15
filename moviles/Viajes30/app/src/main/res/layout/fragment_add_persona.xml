@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gTitle"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gBoton"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gIzq"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gDer"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- ====================== TITLE CON MATERIAL TOOLBAR ====================== -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        app:title="@string/add_persona_title"
+        app:titleTextColor="?attr/colorOnPrimary"
+        app:titleCentered="true"
+        style="@style/Widget.Material3.Toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gTop"
+        app:layout_constraintBottom_toTopOf="@id/gTitle" />
+
+    <!-- ====================== DNI CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/gTitle"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/dni_hint"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== NOMBRE CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNombre"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintBottom_toTopOf="@id/tilEdad"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toBottomOf="@+id/tilDni">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_hint"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== EDAD CON MATERIAL ====================== -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEdad"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="?attr/colorPrimary"
+        app:hintTextColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/gBoton"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toBottomOf="@+id/tilNombre">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edad_hint"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== BOTÓN GUARDAR CON MATERIAL ====================== -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGuardarPersona"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar_persona"
+        style="@style/Widget.Material3.Button"
+        app:icon="@android:drawable/ic_menu_save"
+        app:layout_constraintTop_toTopOf="@id/gBoton"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintEnd_toStartOf="@id/gDer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVolver"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        app:icon="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gDer"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/gIzq"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarPersona" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

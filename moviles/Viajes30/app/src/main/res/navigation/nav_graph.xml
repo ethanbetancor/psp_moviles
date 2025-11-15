@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaVisita">
+
+    <fragment
+        android:id="@+id/listaVisita"
+        android:name="com.example.ui.pantallaViajes.pantallaListaVisitas.listaVisita"
+        android:label="fragment_lista_visita"
+        tools:layout="@layout/fragment_lista_visita" >
+        <action
+            android:id="@+id/action_listaVisita_to_detalleVisita"
+            app:destination="@id/detalleVisita" />
+        <action
+            android:id="@+id/action_listaVisita_to_addVisita"
+            app:destination="@id/addVisita" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaPersona"
+        android:name="com.example.ui.pantallaPersonas.pantallaListaPersonas.listaPersona"
+        android:label="fragment_lista_persona"
+        tools:layout="@layout/fragment_lista_persona" >
+        <action
+            android:id="@+id/action_listaPersona_to_detallePersona"
+            app:destination="@id/detallePersona" />
+        <action
+            android:id="@+id/action_listaPersona_to_addPersona"
+            app:destination="@id/addPersona" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPersona"
+        android:name="com.example.ui.pantallaPersonas.pantallaAddPersona.addPersona"
+        android:label="fragment_add_persona"
+        tools:layout="@layout/fragment_add_persona" >
+        <action
+            android:id="@+id/action_addPersona_to_listaPersona"
+            app:destination="@id/listaPersona" />
+    </fragment>
+    <fragment
+        android:id="@+id/seleccionPersonas"
+        android:name="com.example.ui.pantallaViajes.pantallaSeleccionPersonas.SeleccionPersonas"
+        android:label="fragment_seleccion_personas"
+        tools:layout="@layout/fragment_seleccion_personas" >
+        <action
+            android:id="@+id/action_seleccionPersonas_to_addVisita"
+            app:destination="@id/addVisita">
+            <argument
+                android:name="selectedPersonasNames"
+                app:argType="string[]"
+                app:nullable="true"
+                android:defaultValue="@null" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addVisita"
+        android:name="com.example.ui.pantallaViajes.pantallaAddVisita.AddVisita"
+        android:label="fragment_add_visita2"
+        tools:layout="@layout/fragment_add_visita" >
+        <argument
+            android:name="selectedPersonasNames"
+            app:argType="string[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_addVisita_to_listaVisita"
+            app:destination="@id/listaVisita" />
+        <action
+            android:id="@+id/action_addVisita_to_seleccionPersonas"
+            app:destination="@id/seleccionPersonas" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleVisita"
+        android:name="com.example.ui.pantallaViajes.pantallaDetalleVisita.detalleVisita"
+        android:label="fragment_detalle_visita"
+        tools:layout="@layout/fragment_detalle_visita" >
+        <argument
+            android:name="visitaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detalleVisita_to_listaVisita"
+            app:destination="@id/listaVisita" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallePersona"
+        android:name="com.example.ui.pantallaPersonas.pantallaDetallePersona.detallePersona"
+        android:label="fragment_detalle_persona"
+        tools:layout="@layout/fragment_detalle_persona" >
+        <argument
+            android:name="personaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detallePersona_to_listaPersona"
+            app:destination="@id/listaPersona" />
+    </fragment>
+</navigation>
